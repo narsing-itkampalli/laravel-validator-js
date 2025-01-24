@@ -1,0 +1,4859 @@
+const mimes = [
+    {
+        "mimetypes": "application/andrew-inset",
+        "mimes": [
+            "ez"
+        ]
+    },
+    {
+        "mimetypes": "application/applixware",
+        "mimes": [
+            "aw"
+        ]
+    },
+    {
+        "mimetypes": "application/atom+xml",
+        "mimes": [
+            "atom"
+        ]
+    },
+    {
+        "mimetypes": "application/atomcat+xml",
+        "mimes": [
+            "atomcat"
+        ]
+    },
+    {
+        "mimetypes": "application/atomsvc+xml",
+        "mimes": [
+            "atomsvc"
+        ]
+    },
+    {
+        "mimetypes": "application/ccxml+xml",
+        "mimes": [
+            "ccxml"
+        ]
+    },
+    {
+        "mimetypes": "application/cdmi-capability",
+        "mimes": [
+            "cdmia"
+        ]
+    },
+    {
+        "mimetypes": "application/cdmi-container",
+        "mimes": [
+            "cdmic"
+        ]
+    },
+    {
+        "mimetypes": "application/cdmi-domain",
+        "mimes": [
+            "cdmid"
+        ]
+    },
+    {
+        "mimetypes": "application/cdmi-object",
+        "mimes": [
+            "cdmio"
+        ]
+    },
+    {
+        "mimetypes": "application/cdmi-queue",
+        "mimes": [
+            "cdmiq"
+        ]
+    },
+    {
+        "mimetypes": "application/cu-seeme",
+        "mimes": [
+            "cu"
+        ]
+    },
+    {
+        "mimetypes": "application/davmount+xml",
+        "mimes": [
+            "davmount"
+        ]
+    },
+    {
+        "mimetypes": "application/docbook+xml",
+        "mimes": [
+            "dbk"
+        ]
+    },
+    {
+        "mimetypes": "application/dssc+der",
+        "mimes": [
+            "dssc"
+        ]
+    },
+    {
+        "mimetypes": "application/dssc+xml",
+        "mimes": [
+            "xdssc"
+        ]
+    },
+    {
+        "mimetypes": "application/ecmascript",
+        "mimes": [
+            "ecma"
+        ]
+    },
+    {
+        "mimetypes": "application/emma+xml",
+        "mimes": [
+            "emma"
+        ]
+    },
+    {
+        "mimetypes": "application/epub+zip",
+        "mimes": [
+            "epub"
+        ]
+    },
+    {
+        "mimetypes": "application/exi",
+        "mimes": [
+            "exi"
+        ]
+    },
+    {
+        "mimetypes": "application/font-tdpfr",
+        "mimes": [
+            "pfr"
+        ]
+    },
+    {
+        "mimetypes": "application/gml+xml",
+        "mimes": [
+            "gml"
+        ]
+    },
+    {
+        "mimetypes": "application/gpx+xml",
+        "mimes": [
+            "gpx"
+        ]
+    },
+    {
+        "mimetypes": "application/gxf",
+        "mimes": [
+            "gxf"
+        ]
+    },
+    {
+        "mimetypes": "application/hyperstudio",
+        "mimes": [
+            "stk"
+        ]
+    },
+    {
+        "mimetypes": "application/inkml+xml",
+        "mimes": [
+            "ink",
+            "inkml"
+        ]
+    },
+    {
+        "mimetypes": "application/ipfix",
+        "mimes": [
+            "ipfix"
+        ]
+    },
+    {
+        "mimetypes": "application/java-archive",
+        "mimes": [
+            "jar"
+        ]
+    },
+    {
+        "mimetypes": "application/java-serialized-object",
+        "mimes": [
+            "ser"
+        ]
+    },
+    {
+        "mimetypes": "application/java-vm",
+        "mimes": [
+            "class"
+        ]
+    },
+    {
+        "mimetypes": "application/json",
+        "mimes": [
+            "json"
+        ]
+    },
+    {
+        "mimetypes": "application/jsonml+json",
+        "mimes": [
+            "jsonml"
+        ]
+    },
+    {
+        "mimetypes": "application/lost+xml",
+        "mimes": [
+            "lostxml"
+        ]
+    },
+    {
+        "mimetypes": "application/mac-binhex40",
+        "mimes": [
+            "hqx"
+        ]
+    },
+    {
+        "mimetypes": "application/mac-compactpro",
+        "mimes": [
+            "cpt"
+        ]
+    },
+    {
+        "mimetypes": "application/mads+xml",
+        "mimes": [
+            "mads"
+        ]
+    },
+    {
+        "mimetypes": "application/marc",
+        "mimes": [
+            "mrc"
+        ]
+    },
+    {
+        "mimetypes": "application/marcxml+xml",
+        "mimes": [
+            "mrcx"
+        ]
+    },
+    {
+        "mimetypes": "application/mathematica",
+        "mimes": [
+            "ma",
+            "nb",
+            "mb"
+        ]
+    },
+    {
+        "mimetypes": "application/mathml+xml",
+        "mimes": [
+            "mathml"
+        ]
+    },
+    {
+        "mimetypes": "application/mbox",
+        "mimes": [
+            "mbox"
+        ]
+    },
+    {
+        "mimetypes": "application/mediaservercontrol+xml",
+        "mimes": [
+            "mscml"
+        ]
+    },
+    {
+        "mimetypes": "application/metalink+xml",
+        "mimes": [
+            "metalink"
+        ]
+    },
+    {
+        "mimetypes": "application/metalink4+xml",
+        "mimes": [
+            "meta4"
+        ]
+    },
+    {
+        "mimetypes": "application/mets+xml",
+        "mimes": [
+            "mets"
+        ]
+    },
+    {
+        "mimetypes": "application/mods+xml",
+        "mimes": [
+            "mods"
+        ]
+    },
+    {
+        "mimetypes": "application/mp21",
+        "mimes": [
+            "m21",
+            "mp21"
+        ]
+    },
+    {
+        "mimetypes": "application/mp4",
+        "mimes": [
+            "mp4s"
+        ]
+    },
+    {
+        "mimetypes": "application/msword",
+        "mimes": [
+            "doc",
+            "dot"
+        ]
+    },
+    {
+        "mimetypes": "application/mxf",
+        "mimes": [
+            "mxf"
+        ]
+    },
+    {
+        "mimetypes": "application/octet-stream",
+        "mimes": [
+            "bin",
+            "dms",
+            "lrf",
+            "mar",
+            "so",
+            "dist",
+            "distz",
+            "pkg",
+            "bpk",
+            "dump",
+            "elc",
+            "deploy"
+        ]
+    },
+    {
+        "mimetypes": "application/oda",
+        "mimes": [
+            "oda"
+        ]
+    },
+    {
+        "mimetypes": "application/oebps-package+xml",
+        "mimes": [
+            "opf"
+        ]
+    },
+    {
+        "mimetypes": "application/ogg",
+        "mimes": [
+            "ogx"
+        ]
+    },
+    {
+        "mimetypes": "application/omdoc+xml",
+        "mimes": [
+            "omdoc"
+        ]
+    },
+    {
+        "mimetypes": "application/onenote",
+        "mimes": [
+            "onetoc",
+            "onetoc2",
+            "onetmp",
+            "onepkg"
+        ]
+    },
+    {
+        "mimetypes": "application/oxps",
+        "mimes": [
+            "oxps"
+        ]
+    },
+    {
+        "mimetypes": "application/patch-ops-error+xml",
+        "mimes": [
+            "xer"
+        ]
+    },
+    {
+        "mimetypes": "application/pdf",
+        "mimes": [
+            "pdf"
+        ]
+    },
+    {
+        "mimetypes": "application/pgp-encrypted",
+        "mimes": [
+            "pgp"
+        ]
+    },
+    {
+        "mimetypes": "application/pgp-signature",
+        "mimes": [
+            "asc",
+            "sig"
+        ]
+    },
+    {
+        "mimetypes": "application/pics-rules",
+        "mimes": [
+            "prf"
+        ]
+    },
+    {
+        "mimetypes": "application/pkcs10",
+        "mimes": [
+            "p10"
+        ]
+    },
+    {
+        "mimetypes": "application/pkcs7-mime",
+        "mimes": [
+            "p7m",
+            "p7c"
+        ]
+    },
+    {
+        "mimetypes": "application/pkcs7-signature",
+        "mimes": [
+            "p7s"
+        ]
+    },
+    {
+        "mimetypes": "application/pkcs8",
+        "mimes": [
+            "p8"
+        ]
+    },
+    {
+        "mimetypes": "application/pkix-attr-cert",
+        "mimes": [
+            "ac"
+        ]
+    },
+    {
+        "mimetypes": "application/pkix-cert",
+        "mimes": [
+            "cer"
+        ]
+    },
+    {
+        "mimetypes": "application/pkix-crl",
+        "mimes": [
+            "crl"
+        ]
+    },
+    {
+        "mimetypes": "application/pkix-pkipath",
+        "mimes": [
+            "pkipath"
+        ]
+    },
+    {
+        "mimetypes": "application/pkixcmp",
+        "mimes": [
+            "pki"
+        ]
+    },
+    {
+        "mimetypes": "application/pls+xml",
+        "mimes": [
+            "pls"
+        ]
+    },
+    {
+        "mimetypes": "application/postscript",
+        "mimes": [
+            "ai",
+            "eps",
+            "ps"
+        ]
+    },
+    {
+        "mimetypes": "application/prs.cww",
+        "mimes": [
+            "cww"
+        ]
+    },
+    {
+        "mimetypes": "application/pskc+xml",
+        "mimes": [
+            "pskcxml"
+        ]
+    },
+    {
+        "mimetypes": "application/rdf+xml",
+        "mimes": [
+            "rdf"
+        ]
+    },
+    {
+        "mimetypes": "application/reginfo+xml",
+        "mimes": [
+            "rif"
+        ]
+    },
+    {
+        "mimetypes": "application/relax-ng-compact-syntax",
+        "mimes": [
+            "rnc"
+        ]
+    },
+    {
+        "mimetypes": "application/resource-lists+xml",
+        "mimes": [
+            "rl"
+        ]
+    },
+    {
+        "mimetypes": "application/resource-lists-diff+xml",
+        "mimes": [
+            "rld"
+        ]
+    },
+    {
+        "mimetypes": "application/rls-services+xml",
+        "mimes": [
+            "rs"
+        ]
+    },
+    {
+        "mimetypes": "application/rpki-ghostbusters",
+        "mimes": [
+            "gbr"
+        ]
+    },
+    {
+        "mimetypes": "application/rpki-manifest",
+        "mimes": [
+            "mft"
+        ]
+    },
+    {
+        "mimetypes": "application/rpki-roa",
+        "mimes": [
+            "roa"
+        ]
+    },
+    {
+        "mimetypes": "application/rsd+xml",
+        "mimes": [
+            "rsd"
+        ]
+    },
+    {
+        "mimetypes": "application/rss+xml",
+        "mimes": [
+            "rss"
+        ]
+    },
+    {
+        "mimetypes": "application/rtf",
+        "mimes": [
+            "rtf"
+        ]
+    },
+    {
+        "mimetypes": "application/sbml+xml",
+        "mimes": [
+            "sbml"
+        ]
+    },
+    {
+        "mimetypes": "application/scvp-cv-request",
+        "mimes": [
+            "scq"
+        ]
+    },
+    {
+        "mimetypes": "application/scvp-cv-response",
+        "mimes": [
+            "scs"
+        ]
+    },
+    {
+        "mimetypes": "application/scvp-vp-request",
+        "mimes": [
+            "spq"
+        ]
+    },
+    {
+        "mimetypes": "application/scvp-vp-response",
+        "mimes": [
+            "spp"
+        ]
+    },
+    {
+        "mimetypes": "application/sdp",
+        "mimes": [
+            "sdp"
+        ]
+    },
+    {
+        "mimetypes": "application/set-payment-initiation",
+        "mimes": [
+            "setpay"
+        ]
+    },
+    {
+        "mimetypes": "application/set-registration-initiation",
+        "mimes": [
+            "setreg"
+        ]
+    },
+    {
+        "mimetypes": "application/shf+xml",
+        "mimes": [
+            "shf"
+        ]
+    },
+    {
+        "mimetypes": "application/smil+xml",
+        "mimes": [
+            "smi",
+            "smil"
+        ]
+    },
+    {
+        "mimetypes": "application/sparql-query",
+        "mimes": [
+            "rq"
+        ]
+    },
+    {
+        "mimetypes": "application/sparql-results+xml",
+        "mimes": [
+            "srx"
+        ]
+    },
+    {
+        "mimetypes": "application/srgs",
+        "mimes": [
+            "gram"
+        ]
+    },
+    {
+        "mimetypes": "application/srgs+xml",
+        "mimes": [
+            "grxml"
+        ]
+    },
+    {
+        "mimetypes": "application/sru+xml",
+        "mimes": [
+            "sru"
+        ]
+    },
+    {
+        "mimetypes": "application/ssdl+xml",
+        "mimes": [
+            "ssdl"
+        ]
+    },
+    {
+        "mimetypes": "application/ssml+xml",
+        "mimes": [
+            "ssml"
+        ]
+    },
+    {
+        "mimetypes": "application/tei+xml",
+        "mimes": [
+            "tei",
+            "teicorpus"
+        ]
+    },
+    {
+        "mimetypes": "application/thraud+xml",
+        "mimes": [
+            "tfi"
+        ]
+    },
+    {
+        "mimetypes": "application/timestamped-data",
+        "mimes": [
+            "tsd"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.3gpp.pic-bw-large",
+        "mimes": [
+            "plb"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.3gpp.pic-bw-small",
+        "mimes": [
+            "psb"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.3gpp.pic-bw-var",
+        "mimes": [
+            "pvb"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.3gpp2.tcap",
+        "mimes": [
+            "tcap"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.3m.post-it-notes",
+        "mimes": [
+            "pwn"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.accpac.simply.aso",
+        "mimes": [
+            "aso"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.accpac.simply.imp",
+        "mimes": [
+            "imp"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.acucobol",
+        "mimes": [
+            "acu"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.acucorp",
+        "mimes": [
+            "atc",
+            "acutc"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.adobe.air-application-installer-package+zip",
+        "mimes": [
+            "air"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.adobe.formscentral.fcdt",
+        "mimes": [
+            "fcdt"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.adobe.fxp",
+        "mimes": [
+            "fxp",
+            "fxpl"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.adobe.xdp+xml",
+        "mimes": [
+            "xdp"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.adobe.xfdf",
+        "mimes": [
+            "xfdf"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.ahead.space",
+        "mimes": [
+            "ahead"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.airzip.filesecure.azf",
+        "mimes": [
+            "azf"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.airzip.filesecure.azs",
+        "mimes": [
+            "azs"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.amazon.ebook",
+        "mimes": [
+            "azw"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.americandynamics.acc",
+        "mimes": [
+            "acc"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.amiga.ami",
+        "mimes": [
+            "ami"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.android.package-archive",
+        "mimes": [
+            "apk"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.anser-web-certificate-issue-initiation",
+        "mimes": [
+            "cii"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.anser-web-funds-transfer-initiation",
+        "mimes": [
+            "fti"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.antix.game-component",
+        "mimes": [
+            "atx"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.apple.installer+xml",
+        "mimes": [
+            "mpkg"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.apple.mpegurl",
+        "mimes": [
+            "m3u8"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.aristanetworks.swi",
+        "mimes": [
+            "swi"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.astraea-software.iota",
+        "mimes": [
+            "iota"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.audiograph",
+        "mimes": [
+            "aep"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.blueice.multipass",
+        "mimes": [
+            "mpm"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.bmi",
+        "mimes": [
+            "bmi"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.businessobjects",
+        "mimes": [
+            "rep"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.chemdraw+xml",
+        "mimes": [
+            "cdxml"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.chipnuts.karaoke-mmd",
+        "mimes": [
+            "mmd"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.cinderella",
+        "mimes": [
+            "cdy"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.claymore",
+        "mimes": [
+            "cla"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.cloanto.rp9",
+        "mimes": [
+            "rp9"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.clonk.c4group",
+        "mimes": [
+            "c4g",
+            "c4d",
+            "c4f",
+            "c4p",
+            "c4u"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.cluetrust.cartomobile-config",
+        "mimes": [
+            "c11amc"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.cluetrust.cartomobile-config-pkg",
+        "mimes": [
+            "c11amz"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.commonspace",
+        "mimes": [
+            "csp"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.contact.cmsg",
+        "mimes": [
+            "cdbcmsg"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.cosmocaller",
+        "mimes": [
+            "cmc"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.crick.clicker",
+        "mimes": [
+            "clkx"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.crick.clicker.keyboard",
+        "mimes": [
+            "clkk"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.crick.clicker.palette",
+        "mimes": [
+            "clkp"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.crick.clicker.template",
+        "mimes": [
+            "clkt"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.crick.clicker.wordbank",
+        "mimes": [
+            "clkw"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.criticaltools.wbs+xml",
+        "mimes": [
+            "wbs"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.ctc-posml",
+        "mimes": [
+            "pml"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.cups-ppd",
+        "mimes": [
+            "ppd"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.curl.car",
+        "mimes": [
+            "car"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.curl.pcurl",
+        "mimes": [
+            "pcurl"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.dart",
+        "mimes": [
+            "dart"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.data-vision.rdz",
+        "mimes": [
+            "rdz"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.dece.data",
+        "mimes": [
+            "uvf",
+            "uvvf",
+            "uvd",
+            "uvvd"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.dece.ttml+xml",
+        "mimes": [
+            "uvt",
+            "uvvt"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.dece.unspecified",
+        "mimes": [
+            "uvx",
+            "uvvx"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.dece.zip",
+        "mimes": [
+            "uvz",
+            "uvvz"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.denovo.fcselayout-link",
+        "mimes": [
+            "fe_launch"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.dna",
+        "mimes": [
+            "dna"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.dolby.mlp",
+        "mimes": [
+            "mlp"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.dpgraph",
+        "mimes": [
+            "dpg"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.dreamfactory",
+        "mimes": [
+            "dfac"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.ds-keypoint",
+        "mimes": [
+            "kpxx"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.dvb.ait",
+        "mimes": [
+            "ait"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.dvb.service",
+        "mimes": [
+            "svc"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.dynageo",
+        "mimes": [
+            "geo"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.ecowin.chart",
+        "mimes": [
+            "mag"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.enliven",
+        "mimes": [
+            "nml"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.epson.esf",
+        "mimes": [
+            "esf"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.epson.msf",
+        "mimes": [
+            "msf"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.epson.quickanime",
+        "mimes": [
+            "qam"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.epson.salt",
+        "mimes": [
+            "slt"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.epson.ssf",
+        "mimes": [
+            "ssf"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.eszigno3+xml",
+        "mimes": [
+            "es3",
+            "et3"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.ezpix-album",
+        "mimes": [
+            "ez2"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.ezpix-package",
+        "mimes": [
+            "ez3"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.fdf",
+        "mimes": [
+            "fdf"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.fdsn.mseed",
+        "mimes": [
+            "mseed"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.fdsn.seed",
+        "mimes": [
+            "seed",
+            "dataless"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.flographit",
+        "mimes": [
+            "gph"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.fluxtime.clip",
+        "mimes": [
+            "ftc"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.framemaker",
+        "mimes": [
+            "fm",
+            "frame",
+            "maker",
+            "book"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.frogans.fnc",
+        "mimes": [
+            "fnc"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.frogans.ltf",
+        "mimes": [
+            "ltf"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.fsc.weblaunch",
+        "mimes": [
+            "fsc"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.fujitsu.oasys",
+        "mimes": [
+            "oas"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.fujitsu.oasys2",
+        "mimes": [
+            "oa2"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.fujitsu.oasys3",
+        "mimes": [
+            "oa3"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.fujitsu.oasysgp",
+        "mimes": [
+            "fg5"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.fujitsu.oasysprs",
+        "mimes": [
+            "bh2"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.fujixerox.ddd",
+        "mimes": [
+            "ddd"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.fujixerox.docuworks",
+        "mimes": [
+            "xdw"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.fujixerox.docuworks.binder",
+        "mimes": [
+            "xbd"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.fuzzysheet",
+        "mimes": [
+            "fzs"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.genomatix.tuxedo",
+        "mimes": [
+            "txd"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.geogebra.file",
+        "mimes": [
+            "ggb"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.geogebra.slides",
+        "mimes": [
+            "ggs"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.geogebra.tool",
+        "mimes": [
+            "ggt"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.geometry-explorer",
+        "mimes": [
+            "gex",
+            "gre"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.geonext",
+        "mimes": [
+            "gxt"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.geoplan",
+        "mimes": [
+            "g2w"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.geospace",
+        "mimes": [
+            "g3w"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.gmx",
+        "mimes": [
+            "gmx"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.google-earth.kml+xml",
+        "mimes": [
+            "kml"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.google-earth.kmz",
+        "mimes": [
+            "kmz"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.grafeq",
+        "mimes": [
+            "gqf",
+            "gqs"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.groove-account",
+        "mimes": [
+            "gac"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.groove-help",
+        "mimes": [
+            "ghf"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.groove-identity-message",
+        "mimes": [
+            "gim"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.groove-injector",
+        "mimes": [
+            "grv"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.groove-tool-message",
+        "mimes": [
+            "gtm"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.groove-tool-template",
+        "mimes": [
+            "tpl"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.groove-vcard",
+        "mimes": [
+            "vcg"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.hal+xml",
+        "mimes": [
+            "hal"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.handheld-entertainment+xml",
+        "mimes": [
+            "zmm"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.hbci",
+        "mimes": [
+            "hbci"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.hhe.lesson-player",
+        "mimes": [
+            "les"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.hp-hpgl",
+        "mimes": [
+            "hpgl"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.hp-hpid",
+        "mimes": [
+            "hpid"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.hp-hps",
+        "mimes": [
+            "hps"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.hp-jlyt",
+        "mimes": [
+            "jlt"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.hp-pcl",
+        "mimes": [
+            "pcl"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.hp-pclxl",
+        "mimes": [
+            "pclxl"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.hydrostatix.sof-data",
+        "mimes": [
+            "sfd-hdstx"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.ibm.minipay",
+        "mimes": [
+            "mpy"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.ibm.modcap",
+        "mimes": [
+            "afp",
+            "listafp",
+            "list3820"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.ibm.rights-management",
+        "mimes": [
+            "irm"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.ibm.secure-container",
+        "mimes": [
+            "sc"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.iccprofile",
+        "mimes": [
+            "icc",
+            "icm"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.igloader",
+        "mimes": [
+            "igl"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.immervision-ivp",
+        "mimes": [
+            "ivp"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.immervision-ivu",
+        "mimes": [
+            "ivu"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.insors.igm",
+        "mimes": [
+            "igm"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.intercon.formnet",
+        "mimes": [
+            "xpw",
+            "xpx"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.intergeo",
+        "mimes": [
+            "i2g"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.intu.qbo",
+        "mimes": [
+            "qbo"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.intu.qfx",
+        "mimes": [
+            "qfx"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.ipunplugged.rcprofile",
+        "mimes": [
+            "rcprofile"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.irepository.package+xml",
+        "mimes": [
+            "irp"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.is-xpr",
+        "mimes": [
+            "xpr"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.isac.fcs",
+        "mimes": [
+            "fcs"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.jam",
+        "mimes": [
+            "jam"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.jcp.javame.midlet-rms",
+        "mimes": [
+            "rms"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.jisp",
+        "mimes": [
+            "jisp"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.joost.joda-archive",
+        "mimes": [
+            "joda"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.kahootz",
+        "mimes": [
+            "ktz",
+            "ktr"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.kde.karbon",
+        "mimes": [
+            "karbon"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.kde.kchart",
+        "mimes": [
+            "chrt"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.kde.kformula",
+        "mimes": [
+            "kfo"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.kde.kivio",
+        "mimes": [
+            "flw"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.kde.kontour",
+        "mimes": [
+            "kon"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.kde.kpresenter",
+        "mimes": [
+            "kpr",
+            "kpt"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.kde.kspread",
+        "mimes": [
+            "ksp"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.kde.kword",
+        "mimes": [
+            "kwd",
+            "kwt"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.kenameaapp",
+        "mimes": [
+            "htke"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.kidspiration",
+        "mimes": [
+            "kia"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.kinar",
+        "mimes": [
+            "kne",
+            "knp"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.koan",
+        "mimes": [
+            "skp",
+            "skd",
+            "skt",
+            "skm"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.kodak-descriptor",
+        "mimes": [
+            "sse"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.las.las+xml",
+        "mimes": [
+            "lasxml"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.llamagraphics.life-balance.desktop",
+        "mimes": [
+            "lbd"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.llamagraphics.life-balance.exchange+xml",
+        "mimes": [
+            "lbe"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.lotus-1-2-3",
+        "mimes": [
+            "123"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.lotus-approach",
+        "mimes": [
+            "apr"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.lotus-freelance",
+        "mimes": [
+            "pre"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.lotus-notes",
+        "mimes": [
+            "nsf"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.lotus-organizer",
+        "mimes": [
+            "org"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.lotus-screencam",
+        "mimes": [
+            "scm"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.lotus-wordpro",
+        "mimes": [
+            "lwp"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.macports.portpkg",
+        "mimes": [
+            "portpkg"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.mcd",
+        "mimes": [
+            "mcd"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.medcalcdata",
+        "mimes": [
+            "mc1"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.mediastation.cdkey",
+        "mimes": [
+            "cdkey"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.mfer",
+        "mimes": [
+            "mwf"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.mfmp",
+        "mimes": [
+            "mfm"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.micrografx.flo",
+        "mimes": [
+            "flo"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.micrografx.igx",
+        "mimes": [
+            "igx"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.mif",
+        "mimes": [
+            "mif"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.mobius.daf",
+        "mimes": [
+            "daf"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.mobius.dis",
+        "mimes": [
+            "dis"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.mobius.mbk",
+        "mimes": [
+            "mbk"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.mobius.mqy",
+        "mimes": [
+            "mqy"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.mobius.msl",
+        "mimes": [
+            "msl"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.mobius.plc",
+        "mimes": [
+            "plc"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.mobius.txf",
+        "mimes": [
+            "txf"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.mophun.application",
+        "mimes": [
+            "mpn"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.mophun.certificate",
+        "mimes": [
+            "mpc"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.mozilla.xul+xml",
+        "mimes": [
+            "xul"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.ms-artgalry",
+        "mimes": [
+            "cil"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.ms-cab-compressed",
+        "mimes": [
+            "cab"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.ms-excel",
+        "mimes": [
+            "xls",
+            "xlm",
+            "xla",
+            "xlc",
+            "xlt",
+            "xlw"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.ms-excel.addin.macroenabled.12",
+        "mimes": [
+            "xlam"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.ms-excel.sheet.binary.macroenabled.12",
+        "mimes": [
+            "xlsb"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.ms-excel.sheet.macroenabled.12",
+        "mimes": [
+            "xlsm"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.ms-excel.template.macroenabled.12",
+        "mimes": [
+            "xltm"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.ms-fontobject",
+        "mimes": [
+            "eot"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.ms-htmlhelp",
+        "mimes": [
+            "chm"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.ms-ims",
+        "mimes": [
+            "ims"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.ms-lrm",
+        "mimes": [
+            "lrm"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.ms-officetheme",
+        "mimes": [
+            "thmx"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.ms-pki.seccat",
+        "mimes": [
+            "cat"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.ms-pki.stl",
+        "mimes": [
+            "stl"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.ms-powerpoint",
+        "mimes": [
+            "ppt",
+            "pps",
+            "pot"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.ms-powerpoint.addin.macroenabled.12",
+        "mimes": [
+            "ppam"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.ms-powerpoint.presentation.macroenabled.12",
+        "mimes": [
+            "pptm"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.ms-powerpoint.slide.macroenabled.12",
+        "mimes": [
+            "sldm"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.ms-powerpoint.slideshow.macroenabled.12",
+        "mimes": [
+            "ppsm"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.ms-powerpoint.template.macroenabled.12",
+        "mimes": [
+            "potm"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.ms-project",
+        "mimes": [
+            "mpp",
+            "mpt"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.ms-word.document.macroenabled.12",
+        "mimes": [
+            "docm"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.ms-word.template.macroenabled.12",
+        "mimes": [
+            "dotm"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.ms-works",
+        "mimes": [
+            "wps",
+            "wks",
+            "wcm",
+            "wdb"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.ms-wpl",
+        "mimes": [
+            "wpl"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.ms-xpsdocument",
+        "mimes": [
+            "xps"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.mseq",
+        "mimes": [
+            "mseq"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.musician",
+        "mimes": [
+            "mus"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.muvee.style",
+        "mimes": [
+            "msty"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.mynfc",
+        "mimes": [
+            "taglet"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.neurolanguage.nlu",
+        "mimes": [
+            "nlu"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.nitf",
+        "mimes": [
+            "ntf",
+            "nitf"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.noblenet-directory",
+        "mimes": [
+            "nnd"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.noblenet-sealer",
+        "mimes": [
+            "nns"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.noblenet-web",
+        "mimes": [
+            "nnw"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.nokia.n-gage.data",
+        "mimes": [
+            "ngdat"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.nokia.n-gage.symbian.install",
+        "mimes": [
+            "n-gage"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.nokia.radio-preset",
+        "mimes": [
+            "rpst"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.nokia.radio-presets",
+        "mimes": [
+            "rpss"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.novadigm.edm",
+        "mimes": [
+            "edm"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.novadigm.edx",
+        "mimes": [
+            "edx"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.novadigm.ext",
+        "mimes": [
+            "ext"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.oasis.opendocument.chart",
+        "mimes": [
+            "odc"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.oasis.opendocument.chart-template",
+        "mimes": [
+            "otc"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.oasis.opendocument.database",
+        "mimes": [
+            "odb"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.oasis.opendocument.formula",
+        "mimes": [
+            "odf"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.oasis.opendocument.formula-template",
+        "mimes": [
+            "odft"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.oasis.opendocument.graphics",
+        "mimes": [
+            "odg"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.oasis.opendocument.graphics-template",
+        "mimes": [
+            "otg"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.oasis.opendocument.image",
+        "mimes": [
+            "odi"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.oasis.opendocument.image-template",
+        "mimes": [
+            "oti"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.oasis.opendocument.presentation",
+        "mimes": [
+            "odp"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.oasis.opendocument.presentation-template",
+        "mimes": [
+            "otp"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.oasis.opendocument.spreadsheet",
+        "mimes": [
+            "ods"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.oasis.opendocument.spreadsheet-template",
+        "mimes": [
+            "ots"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.oasis.opendocument.text",
+        "mimes": [
+            "odt"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.oasis.opendocument.text-master",
+        "mimes": [
+            "odm"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.oasis.opendocument.text-template",
+        "mimes": [
+            "ott"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.oasis.opendocument.text-web",
+        "mimes": [
+            "oth"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.olpc-sugar",
+        "mimes": [
+            "xo"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.oma.dd2+xml",
+        "mimes": [
+            "dd2"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.openofficeorg.extension",
+        "mimes": [
+            "oxt"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+        "mimes": [
+            "pptx"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.openxmlformats-officedocument.presentationml.slide",
+        "mimes": [
+            "sldx"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.openxmlformats-officedocument.presentationml.slideshow",
+        "mimes": [
+            "ppsx"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.openxmlformats-officedocument.presentationml.template",
+        "mimes": [
+            "potx"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "mimes": [
+            "xlsx"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.openxmlformats-officedocument.spreadsheetml.template",
+        "mimes": [
+            "xltx"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        "mimes": [
+            "docx"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.openxmlformats-officedocument.wordprocessingml.template",
+        "mimes": [
+            "dotx"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.osgeo.mapguide.package",
+        "mimes": [
+            "mgp"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.osgi.dp",
+        "mimes": [
+            "dp"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.osgi.subsystem",
+        "mimes": [
+            "esa"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.palm",
+        "mimes": [
+            "pdb",
+            "pqa",
+            "oprc"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.pawaafile",
+        "mimes": [
+            "paw"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.pg.format",
+        "mimes": [
+            "str"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.pg.osasli",
+        "mimes": [
+            "ei6"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.picsel",
+        "mimes": [
+            "efif"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.pmi.widget",
+        "mimes": [
+            "wg"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.pocketlearn",
+        "mimes": [
+            "plf"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.powerbuilder6",
+        "mimes": [
+            "pbd"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.previewsystems.box",
+        "mimes": [
+            "box"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.proteus.magazine",
+        "mimes": [
+            "mgz"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.publishare-delta-tree",
+        "mimes": [
+            "qps"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.pvi.ptid1",
+        "mimes": [
+            "ptid"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.quark.quarkxpress",
+        "mimes": [
+            "qxd",
+            "qxt",
+            "qwd",
+            "qwt",
+            "qxl",
+            "qxb"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.realvnc.bed",
+        "mimes": [
+            "bed"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.recordare.musicxml",
+        "mimes": [
+            "mxl"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.recordare.musicxml+xml",
+        "mimes": [
+            "musicxml"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.rig.cryptonote",
+        "mimes": [
+            "cryptonote"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.rim.cod",
+        "mimes": [
+            "cod"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.rn-realmedia",
+        "mimes": [
+            "rm"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.rn-realmedia-vbr",
+        "mimes": [
+            "rmvb"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.route66.link66+xml",
+        "mimes": [
+            "link66"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.sailingtracker.track",
+        "mimes": [
+            "st"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.seemail",
+        "mimes": [
+            "see"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.sema",
+        "mimes": [
+            "sema"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.semd",
+        "mimes": [
+            "semd"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.semf",
+        "mimes": [
+            "semf"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.shana.informed.formdata",
+        "mimes": [
+            "ifm"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.shana.informed.formtemplate",
+        "mimes": [
+            "itp"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.shana.informed.interchange",
+        "mimes": [
+            "iif"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.shana.informed.package",
+        "mimes": [
+            "ipk"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.simtech-mindmapper",
+        "mimes": [
+            "twd",
+            "twds"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.smaf",
+        "mimes": [
+            "mmf"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.smart.teacher",
+        "mimes": [
+            "teacher"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.solent.sdkm+xml",
+        "mimes": [
+            "sdkm",
+            "sdkd"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.spotfire.dxp",
+        "mimes": [
+            "dxp"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.spotfire.sfs",
+        "mimes": [
+            "sfs"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.stardivision.calc",
+        "mimes": [
+            "sdc"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.stardivision.draw",
+        "mimes": [
+            "sda"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.stardivision.impress",
+        "mimes": [
+            "sdd"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.stardivision.math",
+        "mimes": [
+            "smf"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.stardivision.writer",
+        "mimes": [
+            "sdw",
+            "vor"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.stardivision.writer-global",
+        "mimes": [
+            "sgl"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.stepmania.package",
+        "mimes": [
+            "smzip"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.stepmania.stepchart",
+        "mimes": [
+            "sm"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.sun.xml.calc",
+        "mimes": [
+            "sxc"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.sun.xml.calc.template",
+        "mimes": [
+            "stc"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.sun.xml.draw",
+        "mimes": [
+            "sxd"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.sun.xml.draw.template",
+        "mimes": [
+            "std"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.sun.xml.impress",
+        "mimes": [
+            "sxi"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.sun.xml.impress.template",
+        "mimes": [
+            "sti"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.sun.xml.math",
+        "mimes": [
+            "sxm"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.sun.xml.writer",
+        "mimes": [
+            "sxw"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.sun.xml.writer.global",
+        "mimes": [
+            "sxg"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.sun.xml.writer.template",
+        "mimes": [
+            "stw"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.sus-calendar",
+        "mimes": [
+            "sus",
+            "susp"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.svd",
+        "mimes": [
+            "svd"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.symbian.install",
+        "mimes": [
+            "sis",
+            "sisx"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.syncml+xml",
+        "mimes": [
+            "xsm"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.syncml.dm+wbxml",
+        "mimes": [
+            "bdm"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.syncml.dm+xml",
+        "mimes": [
+            "xdm"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.tao.intent-module-archive",
+        "mimes": [
+            "tao"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.tcpdump.pcap",
+        "mimes": [
+            "pcap",
+            "cap",
+            "dmp"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.tmobile-livetv",
+        "mimes": [
+            "tmo"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.trid.tpt",
+        "mimes": [
+            "tpt"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.triscape.mxs",
+        "mimes": [
+            "mxs"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.trueapp",
+        "mimes": [
+            "tra"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.ufdl",
+        "mimes": [
+            "ufd",
+            "ufdl"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.uiq.theme",
+        "mimes": [
+            "utz"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.umajin",
+        "mimes": [
+            "umj"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.unity",
+        "mimes": [
+            "unityweb"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.uoml+xml",
+        "mimes": [
+            "uoml"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.vcx",
+        "mimes": [
+            "vcx"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.visio",
+        "mimes": [
+            "vsd",
+            "vst",
+            "vss",
+            "vsw"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.visionary",
+        "mimes": [
+            "vis"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.vsf",
+        "mimes": [
+            "vsf"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.wap.wbxml",
+        "mimes": [
+            "wbxml"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.wap.wmlc",
+        "mimes": [
+            "wmlc"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.wap.wmlscriptc",
+        "mimes": [
+            "wmlsc"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.webturbo",
+        "mimes": [
+            "wtb"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.wolfram.player",
+        "mimes": [
+            "nbp"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.wordperfect",
+        "mimes": [
+            "wpd"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.wqd",
+        "mimes": [
+            "wqd"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.wt.stf",
+        "mimes": [
+            "stf"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.xara",
+        "mimes": [
+            "xar"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.xfdl",
+        "mimes": [
+            "xfdl"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.yamaha.hv-dic",
+        "mimes": [
+            "hvd"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.yamaha.hv-script",
+        "mimes": [
+            "hvs"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.yamaha.hv-voice",
+        "mimes": [
+            "hvp"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.yamaha.openscoreformat",
+        "mimes": [
+            "osf"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.yamaha.openscoreformat.osfpvg+xml",
+        "mimes": [
+            "osfpvg"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.yamaha.smaf-audio",
+        "mimes": [
+            "saf"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.yamaha.smaf-phrase",
+        "mimes": [
+            "spf"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.yellowriver-custom-menu",
+        "mimes": [
+            "cmp"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.zul",
+        "mimes": [
+            "zir",
+            "zirz"
+        ]
+    },
+    {
+        "mimetypes": "application/vnd.zzazz.deck+xml",
+        "mimes": [
+            "zaz"
+        ]
+    },
+    {
+        "mimetypes": "application/voicexml+xml",
+        "mimes": [
+            "vxml"
+        ]
+    },
+    {
+        "mimetypes": "application/wasm",
+        "mimes": [
+            "wasm"
+        ]
+    },
+    {
+        "mimetypes": "application/widget",
+        "mimes": [
+            "wgt"
+        ]
+    },
+    {
+        "mimetypes": "application/winhlp",
+        "mimes": [
+            "hlp"
+        ]
+    },
+    {
+        "mimetypes": "application/wsdl+xml",
+        "mimes": [
+            "wsdl"
+        ]
+    },
+    {
+        "mimetypes": "application/wspolicy+xml",
+        "mimes": [
+            "wspolicy"
+        ]
+    },
+    {
+        "mimetypes": "application/x-7z-compressed",
+        "mimes": [
+            "7z"
+        ]
+    },
+    {
+        "mimetypes": "application/x-abiword",
+        "mimes": [
+            "abw"
+        ]
+    },
+    {
+        "mimetypes": "application/x-ace-compressed",
+        "mimes": [
+            "ace"
+        ]
+    },
+    {
+        "mimetypes": "application/x-apple-diskimage",
+        "mimes": [
+            "dmg"
+        ]
+    },
+    {
+        "mimetypes": "application/x-authorware-bin",
+        "mimes": [
+            "aab",
+            "x32",
+            "u32",
+            "vox"
+        ]
+    },
+    {
+        "mimetypes": "application/x-authorware-map",
+        "mimes": [
+            "aam"
+        ]
+    },
+    {
+        "mimetypes": "application/x-authorware-seg",
+        "mimes": [
+            "aas"
+        ]
+    },
+    {
+        "mimetypes": "application/x-bcpio",
+        "mimes": [
+            "bcpio"
+        ]
+    },
+    {
+        "mimetypes": "application/x-bittorrent",
+        "mimes": [
+            "torrent"
+        ]
+    },
+    {
+        "mimetypes": "application/x-blorb",
+        "mimes": [
+            "blb",
+            "blorb"
+        ]
+    },
+    {
+        "mimetypes": "application/x-bzip",
+        "mimes": [
+            "bz"
+        ]
+    },
+    {
+        "mimetypes": "application/x-bzip2",
+        "mimes": [
+            "bz2",
+            "boz"
+        ]
+    },
+    {
+        "mimetypes": "application/x-cbr",
+        "mimes": [
+            "cbr",
+            "cba",
+            "cbt",
+            "cbz",
+            "cb7"
+        ]
+    },
+    {
+        "mimetypes": "application/x-cdlink",
+        "mimes": [
+            "vcd"
+        ]
+    },
+    {
+        "mimetypes": "application/x-cfs-compressed",
+        "mimes": [
+            "cfs"
+        ]
+    },
+    {
+        "mimetypes": "application/x-chat",
+        "mimes": [
+            "chat"
+        ]
+    },
+    {
+        "mimetypes": "application/x-chess-pgn",
+        "mimes": [
+            "pgn"
+        ]
+    },
+    {
+        "mimetypes": "application/x-conference",
+        "mimes": [
+            "nsc"
+        ]
+    },
+    {
+        "mimetypes": "application/x-cpio",
+        "mimes": [
+            "cpio"
+        ]
+    },
+    {
+        "mimetypes": "application/x-csh",
+        "mimes": [
+            "csh"
+        ]
+    },
+    {
+        "mimetypes": "application/x-debian-package",
+        "mimes": [
+            "deb",
+            "udeb"
+        ]
+    },
+    {
+        "mimetypes": "application/x-dgc-compressed",
+        "mimes": [
+            "dgc"
+        ]
+    },
+    {
+        "mimetypes": "application/x-director",
+        "mimes": [
+            "dir",
+            "dcr",
+            "dxr",
+            "cst",
+            "cct",
+            "cxt",
+            "w3d",
+            "fgd",
+            "swa"
+        ]
+    },
+    {
+        "mimetypes": "application/x-doom",
+        "mimes": [
+            "wad"
+        ]
+    },
+    {
+        "mimetypes": "application/x-dtbncx+xml",
+        "mimes": [
+            "ncx"
+        ]
+    },
+    {
+        "mimetypes": "application/x-dtbook+xml",
+        "mimes": [
+            "dtb"
+        ]
+    },
+    {
+        "mimetypes": "application/x-dtbresource+xml",
+        "mimes": [
+            "res"
+        ]
+    },
+    {
+        "mimetypes": "application/x-dvi",
+        "mimes": [
+            "dvi"
+        ]
+    },
+    {
+        "mimetypes": "application/x-envoy",
+        "mimes": [
+            "evy"
+        ]
+    },
+    {
+        "mimetypes": "application/x-eva",
+        "mimes": [
+            "eva"
+        ]
+    },
+    {
+        "mimetypes": "application/x-font-bdf",
+        "mimes": [
+            "bdf"
+        ]
+    },
+    {
+        "mimetypes": "application/x-font-ghostscript",
+        "mimes": [
+            "gsf"
+        ]
+    },
+    {
+        "mimetypes": "application/x-font-linux-psf",
+        "mimes": [
+            "psf"
+        ]
+    },
+    {
+        "mimetypes": "application/x-font-pcf",
+        "mimes": [
+            "pcf"
+        ]
+    },
+    {
+        "mimetypes": "application/x-font-snf",
+        "mimes": [
+            "snf"
+        ]
+    },
+    {
+        "mimetypes": "application/x-font-type1",
+        "mimes": [
+            "pfa",
+            "pfb",
+            "pfm",
+            "afm"
+        ]
+    },
+    {
+        "mimetypes": "application/x-freearc",
+        "mimes": [
+            "arc"
+        ]
+    },
+    {
+        "mimetypes": "application/x-futuresplash",
+        "mimes": [
+            "spl"
+        ]
+    },
+    {
+        "mimetypes": "application/x-gca-compressed",
+        "mimes": [
+            "gca"
+        ]
+    },
+    {
+        "mimetypes": "application/x-glulx",
+        "mimes": [
+            "ulx"
+        ]
+    },
+    {
+        "mimetypes": "application/x-gnumeric",
+        "mimes": [
+            "gnumeric"
+        ]
+    },
+    {
+        "mimetypes": "application/x-gramps-xml",
+        "mimes": [
+            "gramps"
+        ]
+    },
+    {
+        "mimetypes": "application/x-gtar",
+        "mimes": [
+            "gtar"
+        ]
+    },
+    {
+        "mimetypes": "application/x-hdf",
+        "mimes": [
+            "hdf"
+        ]
+    },
+    {
+        "mimetypes": "application/x-install-instructions",
+        "mimes": [
+            "install"
+        ]
+    },
+    {
+        "mimetypes": "application/x-iso9660-image",
+        "mimes": [
+            "iso"
+        ]
+    },
+    {
+        "mimetypes": "application/x-java-jnlp-file",
+        "mimes": [
+            "jnlp"
+        ]
+    },
+    {
+        "mimetypes": "application/x-latex",
+        "mimes": [
+            "latex"
+        ]
+    },
+    {
+        "mimetypes": "application/x-lzh-compressed",
+        "mimes": [
+            "lzh",
+            "lha"
+        ]
+    },
+    {
+        "mimetypes": "application/x-mie",
+        "mimes": [
+            "mie"
+        ]
+    },
+    {
+        "mimetypes": "application/x-mobipocket-ebook",
+        "mimes": [
+            "prc",
+            "mobi"
+        ]
+    },
+    {
+        "mimetypes": "application/x-ms-application",
+        "mimes": [
+            "application"
+        ]
+    },
+    {
+        "mimetypes": "application/x-ms-shortcut",
+        "mimes": [
+            "lnk"
+        ]
+    },
+    {
+        "mimetypes": "application/x-ms-wmd",
+        "mimes": [
+            "wmd"
+        ]
+    },
+    {
+        "mimetypes": "application/x-ms-wmz",
+        "mimes": [
+            "wmz"
+        ]
+    },
+    {
+        "mimetypes": "application/x-ms-xbap",
+        "mimes": [
+            "xbap"
+        ]
+    },
+    {
+        "mimetypes": "application/x-msaccess",
+        "mimes": [
+            "mdb"
+        ]
+    },
+    {
+        "mimetypes": "application/x-msbinder",
+        "mimes": [
+            "obd"
+        ]
+    },
+    {
+        "mimetypes": "application/x-mscardfile",
+        "mimes": [
+            "crd"
+        ]
+    },
+    {
+        "mimetypes": "application/x-msclip",
+        "mimes": [
+            "clp"
+        ]
+    },
+    {
+        "mimetypes": "application/x-msdownload",
+        "mimes": [
+            "exe",
+            "dll",
+            "com",
+            "bat",
+            "msi"
+        ]
+    },
+    {
+        "mimetypes": "application/x-msmediaview",
+        "mimes": [
+            "mvb",
+            "m13",
+            "m14"
+        ]
+    },
+    {
+        "mimetypes": "application/x-msmetafile",
+        "mimes": [
+            "wmf",
+            "wmz",
+            "emf",
+            "emz"
+        ]
+    },
+    {
+        "mimetypes": "application/x-msmoney",
+        "mimes": [
+            "mny"
+        ]
+    },
+    {
+        "mimetypes": "application/x-mspublisher",
+        "mimes": [
+            "pub"
+        ]
+    },
+    {
+        "mimetypes": "application/x-msschedule",
+        "mimes": [
+            "scd"
+        ]
+    },
+    {
+        "mimetypes": "application/x-msterminal",
+        "mimes": [
+            "trm"
+        ]
+    },
+    {
+        "mimetypes": "application/x-mswrite",
+        "mimes": [
+            "wri"
+        ]
+    },
+    {
+        "mimetypes": "application/x-netcdf",
+        "mimes": [
+            "nc",
+            "cdf"
+        ]
+    },
+    {
+        "mimetypes": "application/x-nzb",
+        "mimes": [
+            "nzb"
+        ]
+    },
+    {
+        "mimetypes": "application/x-pkcs12",
+        "mimes": [
+            "p12",
+            "pfx"
+        ]
+    },
+    {
+        "mimetypes": "application/x-pkcs7-certificates",
+        "mimes": [
+            "p7b",
+            "spc"
+        ]
+    },
+    {
+        "mimetypes": "application/x-pkcs7-certreqresp",
+        "mimes": [
+            "p7r"
+        ]
+    },
+    {
+        "mimetypes": "application/x-rar-compressed",
+        "mimes": [
+            "rar"
+        ]
+    },
+    {
+        "mimetypes": "application/x-research-info-systems",
+        "mimes": [
+            "ris"
+        ]
+    },
+    {
+        "mimetypes": "application/x-sh",
+        "mimes": [
+            "sh"
+        ]
+    },
+    {
+        "mimetypes": "application/x-shar",
+        "mimes": [
+            "shar"
+        ]
+    },
+    {
+        "mimetypes": "application/x-shockwave-flash",
+        "mimes": [
+            "swf"
+        ]
+    },
+    {
+        "mimetypes": "application/x-silverlight-app",
+        "mimes": [
+            "xap"
+        ]
+    },
+    {
+        "mimetypes": "application/x-sql",
+        "mimes": [
+            "sql"
+        ]
+    },
+    {
+        "mimetypes": "application/x-stuffit",
+        "mimes": [
+            "sit"
+        ]
+    },
+    {
+        "mimetypes": "application/x-stuffitx",
+        "mimes": [
+            "sitx"
+        ]
+    },
+    {
+        "mimetypes": "application/x-subrip",
+        "mimes": [
+            "srt"
+        ]
+    },
+    {
+        "mimetypes": "application/x-sv4cpio",
+        "mimes": [
+            "sv4cpio"
+        ]
+    },
+    {
+        "mimetypes": "application/x-sv4crc",
+        "mimes": [
+            "sv4crc"
+        ]
+    },
+    {
+        "mimetypes": "application/x-t3vm-image",
+        "mimes": [
+            "t3"
+        ]
+    },
+    {
+        "mimetypes": "application/x-tads",
+        "mimes": [
+            "gam"
+        ]
+    },
+    {
+        "mimetypes": "application/x-tar",
+        "mimes": [
+            "tar"
+        ]
+    },
+    {
+        "mimetypes": "application/x-tcl",
+        "mimes": [
+            "tcl"
+        ]
+    },
+    {
+        "mimetypes": "application/x-tex",
+        "mimes": [
+            "tex"
+        ]
+    },
+    {
+        "mimetypes": "application/x-tex-tfm",
+        "mimes": [
+            "tfm"
+        ]
+    },
+    {
+        "mimetypes": "application/x-texinfo",
+        "mimes": [
+            "texinfo",
+            "texi"
+        ]
+    },
+    {
+        "mimetypes": "application/x-tgif",
+        "mimes": [
+            "obj"
+        ]
+    },
+    {
+        "mimetypes": "application/x-ustar",
+        "mimes": [
+            "ustar"
+        ]
+    },
+    {
+        "mimetypes": "application/x-wais-source",
+        "mimes": [
+            "src"
+        ]
+    },
+    {
+        "mimetypes": "application/x-x509-ca-cert",
+        "mimes": [
+            "der",
+            "crt"
+        ]
+    },
+    {
+        "mimetypes": "application/x-xfig",
+        "mimes": [
+            "fig"
+        ]
+    },
+    {
+        "mimetypes": "application/x-xliff+xml",
+        "mimes": [
+            "xlf"
+        ]
+    },
+    {
+        "mimetypes": "application/x-xpinstall",
+        "mimes": [
+            "xpi"
+        ]
+    },
+    {
+        "mimetypes": "application/x-xz",
+        "mimes": [
+            "xz"
+        ]
+    },
+    {
+        "mimetypes": "application/x-zmachine",
+        "mimes": [
+            "z1",
+            "z2",
+            "z3",
+            "z4",
+            "z5",
+            "z6",
+            "z7",
+            "z8"
+        ]
+    },
+    {
+        "mimetypes": "application/xaml+xml",
+        "mimes": [
+            "xaml"
+        ]
+    },
+    {
+        "mimetypes": "application/xcap-diff+xml",
+        "mimes": [
+            "xdf"
+        ]
+    },
+    {
+        "mimetypes": "application/xenc+xml",
+        "mimes": [
+            "xenc"
+        ]
+    },
+    {
+        "mimetypes": "application/xhtml+xml",
+        "mimes": [
+            "xhtml",
+            "xht"
+        ]
+    },
+    {
+        "mimetypes": "application/xml",
+        "mimes": [
+            "xml",
+            "xsl"
+        ]
+    },
+    {
+        "mimetypes": "application/xml-dtd",
+        "mimes": [
+            "dtd"
+        ]
+    },
+    {
+        "mimetypes": "application/xop+xml",
+        "mimes": [
+            "xop"
+        ]
+    },
+    {
+        "mimetypes": "application/xproc+xml",
+        "mimes": [
+            "xpl"
+        ]
+    },
+    {
+        "mimetypes": "application/xslt+xml",
+        "mimes": [
+            "xslt"
+        ]
+    },
+    {
+        "mimetypes": "application/xspf+xml",
+        "mimes": [
+            "xspf"
+        ]
+    },
+    {
+        "mimetypes": "application/xv+xml",
+        "mimes": [
+            "mxml",
+            "xhvml",
+            "xvml",
+            "xvm"
+        ]
+    },
+    {
+        "mimetypes": "application/yang",
+        "mimes": [
+            "yang"
+        ]
+    },
+    {
+        "mimetypes": "application/yin+xml",
+        "mimes": [
+            "yin"
+        ]
+    },
+    {
+        "mimetypes": "application/zip",
+        "mimes": [
+            "zip"
+        ]
+    },
+    {
+        "mimetypes": "audio/adpcm",
+        "mimes": [
+            "adp"
+        ]
+    },
+    {
+        "mimetypes": "audio/basic",
+        "mimes": [
+            "au",
+            "snd"
+        ]
+    },
+    {
+        "mimetypes": "audio/midi",
+        "mimes": [
+            "mid",
+            "midi",
+            "kar",
+            "rmi"
+        ]
+    },
+    {
+        "mimetypes": "audio/mp4",
+        "mimes": [
+            "m4a",
+            "mp4a"
+        ]
+    },
+    {
+        "mimetypes": "audio/mpeg",
+        "mimes": [
+            "mpga",
+            "mp2",
+            "mp2a",
+            "mp3",
+            "m2a",
+            "m3a"
+        ]
+    },
+    {
+        "mimetypes": "audio/ogg",
+        "mimes": [
+            "oga",
+            "ogg",
+            "spx",
+            "opus"
+        ]
+    },
+    {
+        "mimetypes": "audio/s3m",
+        "mimes": [
+            "s3m"
+        ]
+    },
+    {
+        "mimetypes": "audio/silk",
+        "mimes": [
+            "sil"
+        ]
+    },
+    {
+        "mimetypes": "audio/vnd.dece.audio",
+        "mimes": [
+            "uva",
+            "uvva"
+        ]
+    },
+    {
+        "mimetypes": "audio/vnd.digital-winds",
+        "mimes": [
+            "eol"
+        ]
+    },
+    {
+        "mimetypes": "audio/vnd.dra",
+        "mimes": [
+            "dra"
+        ]
+    },
+    {
+        "mimetypes": "audio/vnd.dts",
+        "mimes": [
+            "dts"
+        ]
+    },
+    {
+        "mimetypes": "audio/vnd.dts.hd",
+        "mimes": [
+            "dtshd"
+        ]
+    },
+    {
+        "mimetypes": "audio/vnd.lucent.voice",
+        "mimes": [
+            "lvp"
+        ]
+    },
+    {
+        "mimetypes": "audio/vnd.ms-playready.media.pya",
+        "mimes": [
+            "pya"
+        ]
+    },
+    {
+        "mimetypes": "audio/vnd.nuera.ecelp4800",
+        "mimes": [
+            "ecelp4800"
+        ]
+    },
+    {
+        "mimetypes": "audio/vnd.nuera.ecelp7470",
+        "mimes": [
+            "ecelp7470"
+        ]
+    },
+    {
+        "mimetypes": "audio/vnd.nuera.ecelp9600",
+        "mimes": [
+            "ecelp9600"
+        ]
+    },
+    {
+        "mimetypes": "audio/vnd.rip",
+        "mimes": [
+            "rip"
+        ]
+    },
+    {
+        "mimetypes": "audio/webm",
+        "mimes": [
+            "weba"
+        ]
+    },
+    {
+        "mimetypes": "audio/x-aac",
+        "mimes": [
+            "aac"
+        ]
+    },
+    {
+        "mimetypes": "audio/x-aiff",
+        "mimes": [
+            "aif",
+            "aiff",
+            "aifc"
+        ]
+    },
+    {
+        "mimetypes": "audio/x-caf",
+        "mimes": [
+            "caf"
+        ]
+    },
+    {
+        "mimetypes": "audio/x-flac",
+        "mimes": [
+            "flac"
+        ]
+    },
+    {
+        "mimetypes": "audio/x-matroska",
+        "mimes": [
+            "mka"
+        ]
+    },
+    {
+        "mimetypes": "audio/x-mpegurl",
+        "mimes": [
+            "m3u"
+        ]
+    },
+    {
+        "mimetypes": "audio/x-ms-wax",
+        "mimes": [
+            "wax"
+        ]
+    },
+    {
+        "mimetypes": "audio/x-ms-wma",
+        "mimes": [
+            "wma"
+        ]
+    },
+    {
+        "mimetypes": "audio/x-pn-realaudio",
+        "mimes": [
+            "ram",
+            "ra"
+        ]
+    },
+    {
+        "mimetypes": "audio/x-pn-realaudio-plugin",
+        "mimes": [
+            "rmp"
+        ]
+    },
+    {
+        "mimetypes": "audio/x-wav",
+        "mimes": [
+            "wav"
+        ]
+    },
+    {
+        "mimetypes": "audio/xm",
+        "mimes": [
+            "xm"
+        ]
+    },
+    {
+        "mimetypes": "chemical/x-cdx",
+        "mimes": [
+            "cdx"
+        ]
+    },
+    {
+        "mimetypes": "chemical/x-cif",
+        "mimes": [
+            "cif"
+        ]
+    },
+    {
+        "mimetypes": "chemical/x-cmdf",
+        "mimes": [
+            "cmdf"
+        ]
+    },
+    {
+        "mimetypes": "chemical/x-cml",
+        "mimes": [
+            "cml"
+        ]
+    },
+    {
+        "mimetypes": "chemical/x-csml",
+        "mimes": [
+            "csml"
+        ]
+    },
+    {
+        "mimetypes": "chemical/x-xyz",
+        "mimes": [
+            "xyz"
+        ]
+    },
+    {
+        "mimetypes": "font/collection",
+        "mimes": [
+            "ttc"
+        ]
+    },
+    {
+        "mimetypes": "font/otf",
+        "mimes": [
+            "otf"
+        ]
+    },
+    {
+        "mimetypes": "font/ttf",
+        "mimes": [
+            "ttf"
+        ]
+    },
+    {
+        "mimetypes": "font/woff",
+        "mimes": [
+            "woff"
+        ]
+    },
+    {
+        "mimetypes": "font/woff2",
+        "mimes": [
+            "woff2"
+        ]
+    },
+    {
+        "mimetypes": "image/avif",
+        "mimes": [
+            "avif"
+        ]
+    },
+    {
+        "mimetypes": "image/bmp",
+        "mimes": [
+            "bmp"
+        ]
+    },
+    {
+        "mimetypes": "image/cgm",
+        "mimes": [
+            "cgm"
+        ]
+    },
+    {
+        "mimetypes": "image/g3fax",
+        "mimes": [
+            "g3"
+        ]
+    },
+    {
+        "mimetypes": "image/gif",
+        "mimes": [
+            "gif"
+        ]
+    },
+    {
+        "mimetypes": "image/ief",
+        "mimes": [
+            "ief"
+        ]
+    },
+    {
+        "mimetypes": "image/jpeg",
+        "mimes": [
+            "jpeg",
+            "jpg",
+            "jpe"
+        ]
+    },
+    {
+        "mimetypes": "image/jxl",
+        "mimes": [
+            "jxl"
+        ]
+    },
+    {
+        "mimetypes": "image/ktx",
+        "mimes": [
+            "ktx"
+        ]
+    },
+    {
+        "mimetypes": "image/png",
+        "mimes": [
+            "png"
+        ]
+    },
+    {
+        "mimetypes": "image/prs.btif",
+        "mimes": [
+            "btif"
+        ]
+    },
+    {
+        "mimetypes": "image/sgi",
+        "mimes": [
+            "sgi"
+        ]
+    },
+    {
+        "mimetypes": "image/svg+xml",
+        "mimes": [
+            "svg",
+            "svgz"
+        ]
+    },
+    {
+        "mimetypes": "image/tiff",
+        "mimes": [
+            "tiff",
+            "tif"
+        ]
+    },
+    {
+        "mimetypes": "image/vnd.adobe.photoshop",
+        "mimes": [
+            "psd"
+        ]
+    },
+    {
+        "mimetypes": "image/vnd.dece.graphic",
+        "mimes": [
+            "uvi",
+            "uvvi",
+            "uvg",
+            "uvvg"
+        ]
+    },
+    {
+        "mimetypes": "image/vnd.djvu",
+        "mimes": [
+            "djvu",
+            "djv"
+        ]
+    },
+    {
+        "mimetypes": "image/vnd.dvb.subtitle",
+        "mimes": [
+            "sub"
+        ]
+    },
+    {
+        "mimetypes": "image/vnd.dwg",
+        "mimes": [
+            "dwg"
+        ]
+    },
+    {
+        "mimetypes": "image/vnd.dxf",
+        "mimes": [
+            "dxf"
+        ]
+    },
+    {
+        "mimetypes": "image/vnd.fastbidsheet",
+        "mimes": [
+            "fbs"
+        ]
+    },
+    {
+        "mimetypes": "image/vnd.fpx",
+        "mimes": [
+            "fpx"
+        ]
+    },
+    {
+        "mimetypes": "image/vnd.fst",
+        "mimes": [
+            "fst"
+        ]
+    },
+    {
+        "mimetypes": "image/vnd.fujixerox.edmics-mmr",
+        "mimes": [
+            "mmr"
+        ]
+    },
+    {
+        "mimetypes": "image/vnd.fujixerox.edmics-rlc",
+        "mimes": [
+            "rlc"
+        ]
+    },
+    {
+        "mimetypes": "image/vnd.ms-modi",
+        "mimes": [
+            "mdi"
+        ]
+    },
+    {
+        "mimetypes": "image/vnd.ms-photo",
+        "mimes": [
+            "wdp"
+        ]
+    },
+    {
+        "mimetypes": "image/vnd.net-fpx",
+        "mimes": [
+            "npx"
+        ]
+    },
+    {
+        "mimetypes": "image/vnd.wap.wbmp",
+        "mimes": [
+            "wbmp"
+        ]
+    },
+    {
+        "mimetypes": "image/vnd.xiff",
+        "mimes": [
+            "xif"
+        ]
+    },
+    {
+        "mimetypes": "image/webp",
+        "mimes": [
+            "webp"
+        ]
+    },
+    {
+        "mimetypes": "image/x-3ds",
+        "mimes": [
+            "3ds"
+        ]
+    },
+    {
+        "mimetypes": "image/x-cmu-raster",
+        "mimes": [
+            "ras"
+        ]
+    },
+    {
+        "mimetypes": "image/x-cmx",
+        "mimes": [
+            "cmx"
+        ]
+    },
+    {
+        "mimetypes": "image/x-freehand",
+        "mimes": [
+            "fh",
+            "fhc",
+            "fh4",
+            "fh5",
+            "fh7"
+        ]
+    },
+    {
+        "mimetypes": "image/x-icon",
+        "mimes": [
+            "ico"
+        ]
+    },
+    {
+        "mimetypes": "image/x-mrsid-image",
+        "mimes": [
+            "sid"
+        ]
+    },
+    {
+        "mimetypes": "image/x-pcx",
+        "mimes": [
+            "pcx"
+        ]
+    },
+    {
+        "mimetypes": "image/x-pict",
+        "mimes": [
+            "pic",
+            "pct"
+        ]
+    },
+    {
+        "mimetypes": "image/x-portable-anymap",
+        "mimes": [
+            "pnm"
+        ]
+    },
+    {
+        "mimetypes": "image/x-portable-bitmap",
+        "mimes": [
+            "pbm"
+        ]
+    },
+    {
+        "mimetypes": "image/x-portable-graymap",
+        "mimes": [
+            "pgm"
+        ]
+    },
+    {
+        "mimetypes": "image/x-portable-pixmap",
+        "mimes": [
+            "ppm"
+        ]
+    },
+    {
+        "mimetypes": "image/x-rgb",
+        "mimes": [
+            "rgb"
+        ]
+    },
+    {
+        "mimetypes": "image/x-tga",
+        "mimes": [
+            "tga"
+        ]
+    },
+    {
+        "mimetypes": "image/x-xbitmap",
+        "mimes": [
+            "xbm"
+        ]
+    },
+    {
+        "mimetypes": "image/x-xpixmap",
+        "mimes": [
+            "xpm"
+        ]
+    },
+    {
+        "mimetypes": "image/x-xwindowdump",
+        "mimes": [
+            "xwd"
+        ]
+    },
+    {
+        "mimetypes": "message/rfc822",
+        "mimes": [
+            "eml",
+            "mime"
+        ]
+    },
+    {
+        "mimetypes": "model/iges",
+        "mimes": [
+            "igs",
+            "iges"
+        ]
+    },
+    {
+        "mimetypes": "model/mesh",
+        "mimes": [
+            "msh",
+            "mesh",
+            "silo"
+        ]
+    },
+    {
+        "mimetypes": "model/vnd.collada+xml",
+        "mimes": [
+            "dae"
+        ]
+    },
+    {
+        "mimetypes": "model/vnd.dwf",
+        "mimes": [
+            "dwf"
+        ]
+    },
+    {
+        "mimetypes": "model/vnd.gdl",
+        "mimes": [
+            "gdl"
+        ]
+    },
+    {
+        "mimetypes": "model/vnd.gtw",
+        "mimes": [
+            "gtw"
+        ]
+    },
+    {
+        "mimetypes": "model/vnd.vtu",
+        "mimes": [
+            "vtu"
+        ]
+    },
+    {
+        "mimetypes": "model/vrml",
+        "mimes": [
+            "wrl",
+            "vrml"
+        ]
+    },
+    {
+        "mimetypes": "model/x3d+binary",
+        "mimes": [
+            "x3db",
+            "x3dbz"
+        ]
+    },
+    {
+        "mimetypes": "model/x3d+vrml",
+        "mimes": [
+            "x3dv",
+            "x3dvz"
+        ]
+    },
+    {
+        "mimetypes": "model/x3d+xml",
+        "mimes": [
+            "x3d",
+            "x3dz"
+        ]
+    },
+    {
+        "mimetypes": "text/cache-manifest",
+        "mimes": [
+            "appcache"
+        ]
+    },
+    {
+        "mimetypes": "text/calendar",
+        "mimes": [
+            "ics",
+            "ifb"
+        ]
+    },
+    {
+        "mimetypes": "text/css",
+        "mimes": [
+            "css"
+        ]
+    },
+    {
+        "mimetypes": "text/csv",
+        "mimes": [
+            "csv"
+        ]
+    },
+    {
+        "mimetypes": "text/html",
+        "mimes": [
+            "html",
+            "htm"
+        ]
+    },
+    {
+        "mimetypes": "text/javascript",
+        "mimes": [
+            "js",
+            "mjs"
+        ]
+    },
+    {
+        "mimetypes": "text/n3",
+        "mimes": [
+            "n3"
+        ]
+    },
+    {
+        "mimetypes": "text/plain",
+        "mimes": [
+            "txt",
+            "text",
+            "conf",
+            "def",
+            "list",
+            "log",
+            "in"
+        ]
+    },
+    {
+        "mimetypes": "text/prs.lines.tag",
+        "mimes": [
+            "dsc"
+        ]
+    },
+    {
+        "mimetypes": "text/richtext",
+        "mimes": [
+            "rtx"
+        ]
+    },
+    {
+        "mimetypes": "text/sgml",
+        "mimes": [
+            "sgml",
+            "sgm"
+        ]
+    },
+    {
+        "mimetypes": "text/tab-separated-values",
+        "mimes": [
+            "tsv"
+        ]
+    },
+    {
+        "mimetypes": "text/troff",
+        "mimes": [
+            "t",
+            "tr",
+            "roff",
+            "man",
+            "me",
+            "ms"
+        ]
+    },
+    {
+        "mimetypes": "text/turtle",
+        "mimes": [
+            "ttl"
+        ]
+    },
+    {
+        "mimetypes": "text/uri-list",
+        "mimes": [
+            "uri",
+            "uris",
+            "urls"
+        ]
+    },
+    {
+        "mimetypes": "text/vcard",
+        "mimes": [
+            "vcard"
+        ]
+    },
+    {
+        "mimetypes": "text/vnd.curl",
+        "mimes": [
+            "curl"
+        ]
+    },
+    {
+        "mimetypes": "text/vnd.curl.dcurl",
+        "mimes": [
+            "dcurl"
+        ]
+    },
+    {
+        "mimetypes": "text/vnd.curl.mcurl",
+        "mimes": [
+            "mcurl"
+        ]
+    },
+    {
+        "mimetypes": "text/vnd.curl.scurl",
+        "mimes": [
+            "scurl"
+        ]
+    },
+    {
+        "mimetypes": "text/vnd.dvb.subtitle",
+        "mimes": [
+            "sub"
+        ]
+    },
+    {
+        "mimetypes": "text/vnd.fly",
+        "mimes": [
+            "fly"
+        ]
+    },
+    {
+        "mimetypes": "text/vnd.fmi.flexstor",
+        "mimes": [
+            "flx"
+        ]
+    },
+    {
+        "mimetypes": "text/vnd.graphviz",
+        "mimes": [
+            "gv"
+        ]
+    },
+    {
+        "mimetypes": "text/vnd.in3d.3dml",
+        "mimes": [
+            "3dml"
+        ]
+    },
+    {
+        "mimetypes": "text/vnd.in3d.spot",
+        "mimes": [
+            "spot"
+        ]
+    },
+    {
+        "mimetypes": "text/vnd.sun.j2me.app-descriptor",
+        "mimes": [
+            "jad"
+        ]
+    },
+    {
+        "mimetypes": "text/vnd.wap.wml",
+        "mimes": [
+            "wml"
+        ]
+    },
+    {
+        "mimetypes": "text/vnd.wap.wmlscript",
+        "mimes": [
+            "wmls"
+        ]
+    },
+    {
+        "mimetypes": "text/x-asm",
+        "mimes": [
+            "s",
+            "asm"
+        ]
+    },
+    {
+        "mimetypes": "text/x-c",
+        "mimes": [
+            "c",
+            "cc",
+            "cxx",
+            "cpp",
+            "h",
+            "hh",
+            "dic"
+        ]
+    },
+    {
+        "mimetypes": "text/x-fortran",
+        "mimes": [
+            "f",
+            "for",
+            "f77",
+            "f90"
+        ]
+    },
+    {
+        "mimetypes": "text/x-java-source",
+        "mimes": [
+            "java"
+        ]
+    },
+    {
+        "mimetypes": "text/x-nfo",
+        "mimes": [
+            "nfo"
+        ]
+    },
+    {
+        "mimetypes": "text/x-opml",
+        "mimes": [
+            "opml"
+        ]
+    },
+    {
+        "mimetypes": "text/x-pascal",
+        "mimes": [
+            "p",
+            "pas"
+        ]
+    },
+    {
+        "mimetypes": "text/x-setext",
+        "mimes": [
+            "etx"
+        ]
+    },
+    {
+        "mimetypes": "text/x-sfv",
+        "mimes": [
+            "sfv"
+        ]
+    },
+    {
+        "mimetypes": "text/x-uuencode",
+        "mimes": [
+            "uu"
+        ]
+    },
+    {
+        "mimetypes": "text/x-vcalendar",
+        "mimes": [
+            "vcs"
+        ]
+    },
+    {
+        "mimetypes": "text/x-vcard",
+        "mimes": [
+            "vcf"
+        ]
+    },
+    {
+        "mimetypes": "video/3gpp",
+        "mimes": [
+            "3gp"
+        ]
+    },
+    {
+        "mimetypes": "video/3gpp2",
+        "mimes": [
+            "3g2"
+        ]
+    },
+    {
+        "mimetypes": "video/h261",
+        "mimes": [
+            "h261"
+        ]
+    },
+    {
+        "mimetypes": "video/h263",
+        "mimes": [
+            "h263"
+        ]
+    },
+    {
+        "mimetypes": "video/h264",
+        "mimes": [
+            "h264"
+        ]
+    },
+    {
+        "mimetypes": "video/jpeg",
+        "mimes": [
+            "jpgv"
+        ]
+    },
+    {
+        "mimetypes": "video/jpm",
+        "mimes": [
+            "jpm",
+            "jpgm"
+        ]
+    },
+    {
+        "mimetypes": "video/mj2",
+        "mimes": [
+            "mj2",
+            "mjp2"
+        ]
+    },
+    {
+        "mimetypes": "video/mp2t",
+        "mimes": [
+            "ts",
+            "m2t",
+            "m2ts",
+            "mts"
+        ]
+    },
+    {
+        "mimetypes": "video/mp4",
+        "mimes": [
+            "mp4",
+            "mp4v",
+            "mpg4"
+        ]
+    },
+    {
+        "mimetypes": "video/mpeg",
+        "mimes": [
+            "mpeg",
+            "mpg",
+            "mpe",
+            "m1v",
+            "m2v"
+        ]
+    },
+    {
+        "mimetypes": "video/ogg",
+        "mimes": [
+            "ogv"
+        ]
+    },
+    {
+        "mimetypes": "video/quicktime",
+        "mimes": [
+            "qt",
+            "mov"
+        ]
+    },
+    {
+        "mimetypes": "video/vnd.dece.hd",
+        "mimes": [
+            "uvh",
+            "uvvh"
+        ]
+    },
+    {
+        "mimetypes": "video/vnd.dece.mobile",
+        "mimes": [
+            "uvm",
+            "uvvm"
+        ]
+    },
+    {
+        "mimetypes": "video/vnd.dece.pd",
+        "mimes": [
+            "uvp",
+            "uvvp"
+        ]
+    },
+    {
+        "mimetypes": "video/vnd.dece.sd",
+        "mimes": [
+            "uvs",
+            "uvvs"
+        ]
+    },
+    {
+        "mimetypes": "video/vnd.dece.video",
+        "mimes": [
+            "uvv",
+            "uvvv"
+        ]
+    },
+    {
+        "mimetypes": "video/vnd.dvb.file",
+        "mimes": [
+            "dvb"
+        ]
+    },
+    {
+        "mimetypes": "video/vnd.fvt",
+        "mimes": [
+            "fvt"
+        ]
+    },
+    {
+        "mimetypes": "video/vnd.mpegurl",
+        "mimes": [
+            "mxu",
+            "m4u"
+        ]
+    },
+    {
+        "mimetypes": "video/vnd.ms-playready.media.pyv",
+        "mimes": [
+            "pyv"
+        ]
+    },
+    {
+        "mimetypes": "video/vnd.uvvu.mp4",
+        "mimes": [
+            "uvu",
+            "uvvu"
+        ]
+    },
+    {
+        "mimetypes": "video/vnd.vivo",
+        "mimes": [
+            "viv"
+        ]
+    },
+    {
+        "mimetypes": "video/webm",
+        "mimes": [
+            "webm"
+        ]
+    },
+    {
+        "mimetypes": "video/x-f4v",
+        "mimes": [
+            "f4v"
+        ]
+    },
+    {
+        "mimetypes": "video/x-fli",
+        "mimes": [
+            "fli"
+        ]
+    },
+    {
+        "mimetypes": "video/x-flv",
+        "mimes": [
+            "flv"
+        ]
+    },
+    {
+        "mimetypes": "video/x-m4v",
+        "mimes": [
+            "m4v"
+        ]
+    },
+    {
+        "mimetypes": "video/x-matroska",
+        "mimes": [
+            "mkv",
+            "mk3d",
+            "mks"
+        ]
+    },
+    {
+        "mimetypes": "video/x-mng",
+        "mimes": [
+            "mng"
+        ]
+    },
+    {
+        "mimetypes": "video/x-ms-asf",
+        "mimes": [
+            "asf",
+            "asx"
+        ]
+    },
+    {
+        "mimetypes": "video/x-ms-vob",
+        "mimes": [
+            "vob"
+        ]
+    },
+    {
+        "mimetypes": "video/x-ms-wm",
+        "mimes": [
+            "wm"
+        ]
+    },
+    {
+        "mimetypes": "video/x-ms-wmv",
+        "mimes": [
+            "wmv"
+        ]
+    },
+    {
+        "mimetypes": "video/x-ms-wmx",
+        "mimes": [
+            "wmx"
+        ]
+    },
+    {
+        "mimetypes": "video/x-ms-wvx",
+        "mimes": [
+            "wvx"
+        ]
+    },
+    {
+        "mimetypes": "video/x-msvideo",
+        "mimes": [
+            "avi"
+        ]
+    },
+    {
+        "mimetypes": "video/x-sgi-movie",
+        "mimes": [
+            "movie"
+        ]
+    },
+    {
+        "mimetypes": "video/x-smv",
+        "mimes": [
+            "smv"
+        ]
+    },
+    {
+        "mimetypes": "x-conference/x-cooltalk",
+        "mimes": [
+            "ice"
+        ]
+    }
+];
+
+export function getMimetypeByMime(mime:string) {
+    return mimes.find((mimesItem) => mimesItem.mimes.includes(mime))?.mimetypes;
+}
+
+export function getMimesByMimetype(mime:string) {
+    return mimes.find((mimesItem) => mimesItem.mimes.includes(mime))?.mimes;
+}
