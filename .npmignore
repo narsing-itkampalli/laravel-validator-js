@@ -5,4 +5,5 @@ tsconfig.json
 tests/
 notes/
 src/
+dist/
 .vscode/

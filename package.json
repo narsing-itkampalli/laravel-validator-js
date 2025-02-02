@@ -1,12 +1,12 @@
 {
   "name": "laravel-validator-js",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Powerful Laravel-like validation for JavaScript - Quick, consistent, and easy to use.",
   "author": "Narsing Itkampalli",
   "homepage": "https://github.com/narsing-itkampalli/laravel-validator-js",
   "license": "MIT",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
+  "main": "./cjs/index.cjs",
+  "module": "./mjs/index.js",
   "types": "./types/index.d.ts",
   "type": "module",
   "repository": {
@@ -14,11 +14,12 @@
     "url": "https://github.com/narsing-itkampalli/laravel-validator-js.git"
   },
   "files": [
-    "dist",
+    "cjs",
+    "mjs",
     "types"
   ],
   "scripts": {
-    "build": "tsc && npx rollup ./dist/index.js --file ./dist/index.cjs --format cjs"
+    "build": "tsc && npx rollup ./dist/index.js --file ./cjs/index.cjs --format cjs && npx rollup ./dist/index.js --file ./mjs/index.js --format esm"
   },
   "keywords": [
     "laravel",
