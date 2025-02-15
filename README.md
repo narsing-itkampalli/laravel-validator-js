@@ -139,11 +139,11 @@ await validator.messages(); // Alternative: `await validator.errors.all()`
 
 ```json
 {
-	"team_name": [
-		"The team name must be a string.",
+    "team_name": [
+        "The team name must be a string.",
         "The team name must be at least 1 characters."
-	],
-	"authorization.role": [
+    ],
+    "authorization.role": [
         "The selected authorization.role is invalid."
     ],
     "users.0.email": [
