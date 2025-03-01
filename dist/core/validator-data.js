@@ -1,4 +1,4 @@
-import isPlainObject from "../utils/is-plain-object.js";
+import isPlainObject from "../utils/is-plain-object";
 export default class ValidatorData {
     constructor(data) {
         this.value = [];

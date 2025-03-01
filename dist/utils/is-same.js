@@ -1,4 +1,4 @@
-import isPlainObject from "./is-plain-object.js";
+import isPlainObject from "./is-plain-object";
 export default function isSame(data1, data2) {
     if (Array.isArray(data1) || isPlainObject(data1)) {
         if (!Array.isArray(data2) && !isPlainObject(data2))

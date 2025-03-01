@@ -1,12 +1,12 @@
-import IPValidator from "../utils/ip-validator.js";
-import isPlainObject from "../utils/is-plain-object.js";
-import isSame from "../utils/is-same.js";
-import isMacAddress from "../utils/mac-address-validator.js";
-import { isValidUrl } from "../utils/url-validator.js";
-import validateHexColor from "../utils/validate-hex-color.js";
-import ValidatorContext from "../types/validator-context.js";
-import ValidationHandlers, { ValidatorHandlersReturnType } from "../types/validator-handlers.js";
-import EmailValidator from "../utils/email-validator.js";
+import IPValidator from "../utils/ip-validator";
+import isPlainObject from "../utils/is-plain-object";
+import isSame from "../utils/is-same";
+import isMacAddress from "../utils/mac-address-validator";
+import { isValidUrl } from "../utils/url-validator";
+import validateHexColor from "../utils/validate-hex-color";
+import ValidatorContext from "../types/validator-context";
+import ValidationHandlers, { ValidatorHandlersReturnType } from "../types/validator-handlers";
+import EmailValidator from "../utils/email-validator";
 
 export default class ValidationHandler {
     private context:ValidatorContext;

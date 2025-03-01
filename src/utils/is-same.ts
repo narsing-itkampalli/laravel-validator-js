@@ -1,4 +1,4 @@
-import isPlainObject from "./is-plain-object.js";
+import isPlainObject from "./is-plain-object";
 
 /**
  * Compares two data structures (arrays or objects) for deep equality.

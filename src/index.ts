@@ -1,12 +1,12 @@
-import validatorDefaultMessages from "./locale/messages.js";
-import ValidatorContext, { ValidatorAttributes, ValidatorInput, ValidatorCustomMessages, ValidatorRules, InlineValidatorRuleMethod, ValidatorContextRules } from "./types/validator-context.js";
-import { ValidatorCustomRule } from "./types/validator-custom-rule.js";
-import { ValidationHandlerArguments, ValidatorHandlersReturnType } from "./types/validator-handlers.js";
-import { ValidationRuleNames } from "./types/validator-rule-names.js";
-import ValidatorData, { ValidatorDataParsedValue } from "./core/validator-data.js";
-import { FieldValidationResult, ValidationInfo, ValidationResult } from "./types/validation-info.js";
-import ValidationHandler from "./core/validation-handler.js";
-import RulesConfig from "./config/rules-config.js";
+import validatorDefaultMessages from "./locale/messages";
+import ValidatorContext, { ValidatorAttributes, ValidatorInput, ValidatorCustomMessages, ValidatorRules, InlineValidatorRuleMethod, ValidatorContextRules } from "./types/validator-context";
+import { ValidatorCustomRule } from "./types/validator-custom-rule";
+import { ValidationHandlerArguments, ValidatorHandlersReturnType } from "./types/validator-handlers";
+import { ValidationRuleNames } from "./types/validator-rule-names";
+import ValidatorData, { ValidatorDataParsedValue } from "./core/validator-data";
+import { FieldValidationResult, ValidationInfo, ValidationResult } from "./types/validation-info";
+import ValidationHandler from "./core/validation-handler";
+import RulesConfig from "./config/rules-config";
 
 export default class Validator {
     private context:ValidatorContext;

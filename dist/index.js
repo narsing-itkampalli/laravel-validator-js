@@ -1,7 +1,7 @@
-import validatorDefaultMessages from "./locale/messages.js";
-import ValidatorData from "./core/validator-data.js";
-import ValidationHandler from "./core/validation-handler.js";
-import RulesConfig from "./config/rules-config.js";
+import validatorDefaultMessages from "./locale/messages";
+import ValidatorData from "./core/validator-data";
+import ValidationHandler from "./core/validation-handler";
+import RulesConfig from "./config/rules-config";
 class Validator {
     constructor(input, rules, messages = {}, attributes = {}) {
         this.validationResult = {
